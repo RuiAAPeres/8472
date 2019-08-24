@@ -52,13 +52,37 @@
 		B20890F2231175BF007D0ABB /* EightFourSevenTwo */ = {
 			isa = PBXGroup;
 			children = (
-				B20890F3231175BF007D0ABB /* AppDelegate.swift */,
-				B20890F5231175BF007D0ABB /* SceneDelegate.swift */,
-				B20890F9231175C1007D0ABB /* Assets.xcassets */,
-				B20890FE231175C1007D0ABB /* LaunchScreen.storyboard */,
-				B2089101231175C1007D0ABB /* Info.plist */,
+				B208910723117B25007D0ABB /* Sources */,
+				B208910923117B3C007D0ABB /* Assets */,
+				B208910A23117B49007D0ABB /* Supporting Files */,
 			);
 			path = EightFourSevenTwo;
+			sourceTree = "<group>";
+		};
+		B208910723117B25007D0ABB /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				B20890F3231175BF007D0ABB /* AppDelegate.swift */,
+				B20890F5231175BF007D0ABB /* SceneDelegate.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		B208910923117B3C007D0ABB /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				B20890F9231175C1007D0ABB /* Assets.xcassets */,
+				B20890FE231175C1007D0ABB /* LaunchScreen.storyboard */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		B208910A23117B49007D0ABB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B2089101231175C1007D0ABB /* Info.plist */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,7 +295,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NGP3RUJBJ8;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = EightFourSevenTwo/Info.plist;
+				INFOPLIST_FILE = "EightFourSevenTwo/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -290,7 +314,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NGP3RUJBJ8;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = EightFourSevenTwo/Info.plist;
+				INFOPLIST_FILE = "EightFourSevenTwo/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
