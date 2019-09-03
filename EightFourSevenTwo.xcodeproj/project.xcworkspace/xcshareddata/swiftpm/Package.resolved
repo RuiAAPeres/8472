@@ -9,6 +9,15 @@
           "revision": "3651fe99f66aba4ec736bfe91409bc00eb8dae6d",
           "version": "0.6.0"
         }
+      },
+      {
+        "package": "Overture",
+        "repositoryURL": "git@github.com:pointfreeco/swift-overture.git",
+        "state": {
+          "branch": null,
+          "revision": "7977acd7597f413717058acc1e080731249a1d7e",
+          "version": "0.5.0"
+        }
       }
     ]
   },
