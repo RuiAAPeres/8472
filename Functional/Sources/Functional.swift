@@ -77,3 +77,11 @@ public func equals<Root, Value>(_ kp: KeyPath<Root, Value>, _ value: Value) -> (
         return root[keyPath: kp] == value
     }
 }
+
+public func first<T, U>(_ value: (T, U)) -> T {
+    return value.0
+}
+
+public func second<T, U>(_ value: (T, U)) -> U {
+    return value.1
+}

@@ -1,35 +1,33 @@
 import Foundation
+import Functional
 
-func encode<T: Encodable>(_ value: T,
-                          keyStrategy: JSONEncoder.KeyEncodingStrategy = .convertToSnakeCase
-) -> Result<Data, Error> {
+func encode<T: Encodable>(_ value: T) -> Result<Data, CoreError> {
     
     let encoder = JSONEncoder()
-    encoder.keyEncodingStrategy = keyStrategy
+    encoder.keyEncodingStrategy = .convertToSnakeCase
     
     do {
         let data = try encoder.encode(value)
         return .success(data)
     }
     catch {
-        return .failure(error)
+        return error.localizedDescription |>
+            CoreError.parser >>> Result.failure
     }
 }
 
-func decode<T: Decodable>(_ data: Data,
-                          dateStrategy: JSONDecoder.DateDecodingStrategy = .iso8601,
-                          keyStrategy: JSONDecoder.KeyDecodingStrategy = .convertFromSnakeCase
-) -> Result<T, Error> {
+func decode<T: Decodable>(_ data: Data) -> Result<T, CoreError> {
     
     let decoder = JSONDecoder()
-    decoder.dateDecodingStrategy = dateStrategy
-    decoder.keyDecodingStrategy = keyStrategy
+    decoder.dateDecodingStrategy = .iso8601
+    decoder.keyDecodingStrategy = .convertFromSnakeCase
     
     do {
         let value = try decoder.decode(T.self, from: data)
         return .success(value)
     }
     catch {
-        return .failure(error)
+        return error.localizedDescription |>
+            CoreError.parser >>> Result.failure
     }
 }
