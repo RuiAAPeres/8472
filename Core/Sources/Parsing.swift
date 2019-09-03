@@ -1,21 +1,35 @@
 import Foundation
 
 func encode<T: Encodable>(_ value: T,
-                          strategy: JSONEncoder.KeyEncodingStrategy = .convertToSnakeCase
+                          keyStrategy: JSONEncoder.KeyEncodingStrategy = .convertToSnakeCase
 ) -> Result<Data, Error> {
     
     let encoder = JSONEncoder()
-    encoder.keyEncodingStrategy = strategy
+    encoder.keyEncodingStrategy = keyStrategy
     
-    fatalError()
+    do {
+        let data = try encoder.encode(value)
+        return .success(data)
+    }
+    catch {
+        return .failure(error)
+    }
 }
 
-func decode<T: Decodable>(_ data: Data
+func decode<T: Decodable>(_ data: Data,
+                          dateStrategy: JSONDecoder.DateDecodingStrategy = .iso8601,
+                          keyStrategy: JSONDecoder.KeyDecodingStrategy = .convertFromSnakeCase
 ) -> Result<T, Error> {
     
     let decoder = JSONDecoder()
-    decoder.dateDecodingStrategy = .iso8601
-    decoder.keyDecodingStrategy = .convertFromSnakeCase
+    decoder.dateDecodingStrategy = dateStrategy
+    decoder.keyDecodingStrategy = keyStrategy
     
-    fatalError()
+    do {
+        let value = try decoder.decode(T.self, from: data)
+        return .success(value)
+    }
+    catch {
+        return .failure(error)
+    }
 }
