@@ -16,6 +16,8 @@
 		B208911C23133B67007D0ABB /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B208911523133B67007D0ABB /* Core.framework */; };
 		B208911D23133B67007D0ABB /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B208911523133B67007D0ABB /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B208912723133C88007D0ABB /* Connectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B208912423133C88007D0ABB /* Connectable.swift */; };
+		B2D4EFCC2331565100541FA8 /* StravaCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2D4EFC52331565100541FA8 /* StravaCore.framework */; };
+		B2D4EFCD2331565100541FA8 /* StravaCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B2D4EFC52331565100541FA8 /* StravaCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B2E1F30D231ED9ED00AADB2D /* Parsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E1F30C231ED9ED00AADB2D /* Parsing.swift */; };
 		B2E1F31A231EE16600AADB2D /* Functional.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2E1F313231EE16600AADB2D /* Functional.framework */; };
 		B2E1F31B231EE16600AADB2D /* Functional.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B2E1F313231EE16600AADB2D /* Functional.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -34,6 +36,13 @@
 			remoteGlobalIDString = B208911423133B67007D0ABB;
 			remoteInfo = Network;
 		};
+		B2D4EFCA2331565100541FA8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B20890E8231175BF007D0ABB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B2D4EFC42331565100541FA8;
+			remoteInfo = StravaCore;
+		};
 		B2E1F318231EE16600AADB2D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B20890E8231175BF007D0ABB /* Project object */;
@@ -51,6 +60,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				B208911D23133B67007D0ABB /* Core.framework in Embed Frameworks */,
+				B2D4EFCD2331565100541FA8 /* StravaCore.framework in Embed Frameworks */,
 				B2E1F31B231EE16600AADB2D /* Functional.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -68,6 +78,8 @@
 		B208911523133B67007D0ABB /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B208911823133B67007D0ABB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B208912423133C88007D0ABB /* Connectable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connectable.swift; sourceTree = "<group>"; };
+		B2D4EFC52331565100541FA8 /* StravaCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StravaCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2D4EFC82331565100541FA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2E1F30C231ED9ED00AADB2D /* Parsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parsing.swift; sourceTree = "<group>"; };
 		B2E1F313231EE16600AADB2D /* Functional.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Functional.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2E1F316231EE16600AADB2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -85,11 +97,19 @@
 				B208910F231187D5007D0ABB /* CombineFeedbackUI in Frameworks */,
 				B208911C23133B67007D0ABB /* Core.framework in Frameworks */,
 				B2E1F31A231EE16600AADB2D /* Functional.framework in Frameworks */,
+				B2D4EFCC2331565100541FA8 /* StravaCore.framework in Frameworks */,
 				B2E1F324231EE97600AADB2D /* Overture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		B208911223133B67007D0ABB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2D4EFC22331565100541FA8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -113,6 +133,7 @@
 				B20890F2231175BF007D0ABB /* EightFourSevenTwo */,
 				B208911623133B67007D0ABB /* Core */,
 				B2E1F314231EE16600AADB2D /* Functional */,
+				B2D4EFC62331565100541FA8 /* StravaCore */,
 				B20890F1231175BF007D0ABB /* Products */,
 				B2E1F325231EE98100AADB2D /* Frameworks */,
 			);
@@ -124,6 +145,7 @@
 				B20890F0231175BF007D0ABB /* EightFourSevenTwo.app */,
 				B208911523133B67007D0ABB /* Core.framework */,
 				B2E1F313231EE16600AADB2D /* Functional.framework */,
+				B2D4EFC52331565100541FA8 /* StravaCore.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -184,6 +206,14 @@
 			path = Sources;
 			sourceTree = "<group>";
 		};
+		B2D4EFC62331565100541FA8 /* StravaCore */ = {
+			isa = PBXGroup;
+			children = (
+				B2D4EFC82331565100541FA8 /* Info.plist */,
+			);
+			path = StravaCore;
+			sourceTree = "<group>";
+		};
 		B2E1F314231EE16600AADB2D /* Functional */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,6 +248,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B2D4EFC02331565100541FA8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B2E1F30E231EE16600AADB2D /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -242,6 +279,7 @@
 			dependencies = (
 				B208911B23133B67007D0ABB /* PBXTargetDependency */,
 				B2E1F319231EE16600AADB2D /* PBXTargetDependency */,
+				B2D4EFCB2331565100541FA8 /* PBXTargetDependency */,
 			);
 			name = EightFourSevenTwo;
 			packageProductDependencies = (
@@ -269,6 +307,24 @@
 			name = Core;
 			productName = Network;
 			productReference = B208911523133B67007D0ABB /* Core.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B2D4EFC42331565100541FA8 /* StravaCore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B2D4EFD02331565100541FA8 /* Build configuration list for PBXNativeTarget "StravaCore" */;
+			buildPhases = (
+				B2D4EFC02331565100541FA8 /* Headers */,
+				B2D4EFC12331565100541FA8 /* Sources */,
+				B2D4EFC22331565100541FA8 /* Frameworks */,
+				B2D4EFC32331565100541FA8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StravaCore;
+			productName = StravaCore;
+			productReference = B2D4EFC52331565100541FA8 /* StravaCore.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		B2E1F312231EE16600AADB2D /* Functional */ = {
@@ -309,6 +365,10 @@
 						CreatedOnToolsVersion = 11.0;
 						LastSwiftMigration = 1100;
 					};
+					B2D4EFC42331565100541FA8 = {
+						CreatedOnToolsVersion = 11.0;
+						LastSwiftMigration = 1100;
+					};
 					B2E1F312231EE16600AADB2D = {
 						CreatedOnToolsVersion = 11.0;
 						LastSwiftMigration = 1100;
@@ -333,6 +393,7 @@
 			projectRoot = "";
 			targets = (
 				B20890EF231175BF007D0ABB /* EightFourSevenTwo */,
+				B2D4EFC42331565100541FA8 /* StravaCore */,
 				B208911423133B67007D0ABB /* Core */,
 				B2E1F312231EE16600AADB2D /* Functional */,
 			);
@@ -350,6 +411,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		B208911323133B67007D0ABB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2D4EFC32331565100541FA8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -386,6 +454,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B2D4EFC12331565100541FA8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B2E1F30F231EE16600AADB2D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -401,6 +476,11 @@
 			isa = PBXTargetDependency;
 			target = B208911423133B67007D0ABB /* Core */;
 			targetProxy = B208911A23133B67007D0ABB /* PBXContainerItemProxy */;
+		};
+		B2D4EFCB2331565100541FA8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B2D4EFC42331565100541FA8 /* StravaCore */;
+			targetProxy = B2D4EFCA2331565100541FA8 /* PBXContainerItemProxy */;
 		};
 		B2E1F319231EE16600AADB2D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -632,6 +712,63 @@
 			};
 			name = Release;
 		};
+		B2D4EFCE2331565100541FA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = NGP3RUJBJ8;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = StravaCore/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.emergencyavocado.StravaCore;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B2D4EFCF2331565100541FA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = NGP3RUJBJ8;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = StravaCore/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.emergencyavocado.StravaCore;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		B2E1F31D231EE16600AADB2D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -715,6 +852,15 @@
 			buildConfigurations = (
 				B208911F23133B67007D0ABB /* Debug */,
 				B208912023133B67007D0ABB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B2D4EFD02331565100541FA8 /* Build configuration list for PBXNativeTarget "StravaCore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2D4EFCE2331565100541FA8 /* Debug */,
+				B2D4EFCF2331565100541FA8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
