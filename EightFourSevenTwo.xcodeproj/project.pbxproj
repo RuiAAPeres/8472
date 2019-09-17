@@ -27,6 +27,11 @@
 		B2D4EFE12331589200541FA8 /* StravaStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D4EFDD2331589100541FA8 /* StravaStream.swift */; };
 		B2D4EFE32331593A00541FA8 /* StravaBackendResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D4EFE22331593A00541FA8 /* StravaBackendResolver.swift */; };
 		B2D4EFE5233159C500541FA8 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D4EFE4233159C500541FA8 /* Resource.swift */; };
+		B2D4EFE923315ADF00541FA8 /* SessionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D4EFE723315ADF00541FA8 /* SessionViewModel.swift */; };
+		B2D4EFEA23315ADF00541FA8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D4EFE823315ADF00541FA8 /* User.swift */; };
+		B2D4EFEC23315B3900541FA8 /* StravaAuthenticationBusinessController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D4EFEB23315B3900541FA8 /* StravaAuthenticationBusinessController.swift */; };
+		B2D4EFEE23315D5E00541FA8 /* Result+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D4EFED23315D5E00541FA8 /* Result+Extensions.swift */; };
+		B2D4EFF0233160C500541FA8 /* CombineFeedback in Frameworks */ = {isa = PBXBuildFile; productRef = B2D4EFEF233160C500541FA8 /* CombineFeedback */; };
 		B2E1F30D231ED9ED00AADB2D /* Parsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E1F30C231ED9ED00AADB2D /* Parsing.swift */; };
 		B2E1F31A231EE16600AADB2D /* Functional.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2E1F313231EE16600AADB2D /* Functional.framework */; };
 		B2E1F31B231EE16600AADB2D /* Functional.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B2E1F313231EE16600AADB2D /* Functional.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -96,6 +101,10 @@
 		B2D4EFDD2331589100541FA8 /* StravaStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StravaStream.swift; sourceTree = "<group>"; };
 		B2D4EFE22331593A00541FA8 /* StravaBackendResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StravaBackendResolver.swift; sourceTree = "<group>"; };
 		B2D4EFE4233159C500541FA8 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		B2D4EFE723315ADF00541FA8 /* SessionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionViewModel.swift; sourceTree = "<group>"; };
+		B2D4EFE823315ADF00541FA8 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		B2D4EFEB23315B3900541FA8 /* StravaAuthenticationBusinessController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StravaAuthenticationBusinessController.swift; sourceTree = "<group>"; };
+		B2D4EFED23315D5E00541FA8 /* Result+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Result+Extensions.swift"; sourceTree = "<group>"; };
 		B2E1F30C231ED9ED00AADB2D /* Parsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parsing.swift; sourceTree = "<group>"; };
 		B2E1F313231EE16600AADB2D /* Functional.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Functional.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2E1F316231EE16600AADB2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -130,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2D4EFD72331582D00541FA8 /* Core.framework in Frameworks */,
+				B2D4EFF0233160C500541FA8 /* CombineFeedback in Frameworks */,
 				B2D4EFD82331582D00541FA8 /* Functional.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,6 +231,7 @@
 				B2E1F30C231ED9ED00AADB2D /* Parsing.swift */,
 				B2E1F328231EEDAD00AADB2D /* Fetch.swift */,
 				B2D4EFE4233159C500541FA8 /* Resource.swift */,
+				B2D4EFED23315D5E00541FA8 /* Result+Extensions.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -237,6 +248,7 @@
 		B2D4EFD42331573700541FA8 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				B2D4EFE623315A9700541FA8 /* Session */,
 				B2D4EFD92331587500541FA8 /* Models */,
 				B2D4EFD52331573F00541FA8 /* StravaConfiguration.swift */,
 				B2D4EFE22331593A00541FA8 /* StravaBackendResolver.swift */,
@@ -253,6 +265,16 @@
 				B2D4EFDD2331589100541FA8 /* StravaStream.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		B2D4EFE623315A9700541FA8 /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				B2D4EFE723315ADF00541FA8 /* SessionViewModel.swift */,
+				B2D4EFEB23315B3900541FA8 /* StravaAuthenticationBusinessController.swift */,
+				B2D4EFE823315ADF00541FA8 /* User.swift */,
+			);
+			path = Session;
 			sourceTree = "<group>";
 		};
 		B2E1F314231EE16600AADB2D /* Functional */ = {
@@ -364,6 +386,9 @@
 			dependencies = (
 			);
 			name = StravaCore;
+			packageProductDependencies = (
+				B2D4EFEF233160C500541FA8 /* CombineFeedback */,
+			);
 			productName = StravaCore;
 			productReference = B2D4EFC52331565100541FA8 /* StravaCore.framework */;
 			productType = "com.apple.product-type.framework";
@@ -488,6 +513,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2D4EFEE23315D5E00541FA8 /* Result+Extensions.swift in Sources */,
 				B2E1F329231EEDAD00AADB2D /* Fetch.swift in Sources */,
 				B2E1F32D231EF21D00AADB2D /* CoreError.swift in Sources */,
 				B2E1F30D231ED9ED00AADB2D /* Parsing.swift in Sources */,
@@ -502,8 +528,11 @@
 			files = (
 				B2D4EFDE2331589200541FA8 /* StravaAthlete.swift in Sources */,
 				B2D4EFE32331593A00541FA8 /* StravaBackendResolver.swift in Sources */,
+				B2D4EFEC23315B3900541FA8 /* StravaAuthenticationBusinessController.swift in Sources */,
 				B2D4EFE02331589200541FA8 /* StravaAPI.swift in Sources */,
 				B2D4EFDF2331589200541FA8 /* StravaActivity.swift in Sources */,
+				B2D4EFEA23315ADF00541FA8 /* User.swift in Sources */,
+				B2D4EFE923315ADF00541FA8 /* SessionViewModel.swift in Sources */,
 				B2D4EFE12331589200541FA8 /* StravaStream.swift in Sources */,
 				B2D4EFD62331573F00541FA8 /* StravaConfiguration.swift in Sources */,
 			);
@@ -953,6 +982,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B208910B231187D5007D0ABB /* XCRemoteSwiftPackageReference "CombineFeedback" */;
 			productName = CombineFeedbackUI;
+		};
+		B2D4EFEF233160C500541FA8 /* CombineFeedback */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B208910B231187D5007D0ABB /* XCRemoteSwiftPackageReference "CombineFeedback" */;
+			productName = CombineFeedback;
 		};
 		B2E1F323231EE97600AADB2D /* Overture */ = {
 			isa = XCSwiftPackageProductDependency;

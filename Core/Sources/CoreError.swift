@@ -1,4 +1,4 @@
-public enum CoreError: Error {
+public enum CoreError: Error, Equatable {
     case network(String)
     case parser(String)
 }

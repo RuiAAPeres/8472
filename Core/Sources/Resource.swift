@@ -13,12 +13,22 @@ public struct Resource: Equatable, CustomStringConvertible {
     public let body: Data?
     public let query: Query
     
-    public init(path: String, method: Method, body: Data? = nil, headers: Headers = [:], query: Query = [:]) {
+    public init(path: String,
+                method: Method,
+                body: Data? = nil,
+                headers: Headers = [:],
+                query: Query = [:]) {
         self.path = path
         self.method = method
         self.body = body
         self.headers = headers
         self.query = query
+    }
+    
+    public init(path: String,
+                method: Method,
+                body: Data) {
+        self.init(path: path, method: method, body: body, headers: [:], query: [:])
     }
     
     public var description: String {

@@ -1,7 +1,7 @@
 import Foundation
 import Functional
 
-func encode<T: Encodable>(_ value: T) -> Result<Data, CoreError> {
+public func encode<T: Encodable>(_ value: T) -> Result<Data, CoreError> {
     
     let encoder = JSONEncoder()
     encoder.keyEncodingStrategy = .convertToSnakeCase
@@ -16,7 +16,7 @@ func encode<T: Encodable>(_ value: T) -> Result<Data, CoreError> {
     }
 }
 
-func decode<T: Decodable>(_ data: Data) -> Result<T, CoreError> {
+public func decode<T: Decodable>(_ data: Data) -> Result<T, CoreError> {
     
     let decoder = JSONDecoder()
     decoder.dateDecodingStrategy = .iso8601
@@ -31,3 +31,4 @@ func decode<T: Decodable>(_ data: Data) -> Result<T, CoreError> {
             CoreError.parser >>> Result.failure
     }
 }
+
