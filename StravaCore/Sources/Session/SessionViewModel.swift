@@ -75,7 +75,7 @@ extension SessionViewModel {
                 
                 let empty = Empty<Event, Never>().eraseToAnyPublisher()
                 
-                return stravaURLCode.flatMapLatest { someCode -> AnyPublisher<Event, Never>  in
+                return stravaURLCode.flatMapLatest { someCode -> AnyPublisher<Event, Never> in
                     guard case .unauthenticated = state else {
                         return empty
                     }

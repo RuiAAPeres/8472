@@ -32,6 +32,11 @@
 		B2D4EFEC23315B3900541FA8 /* StravaAuthenticationBusinessController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D4EFEB23315B3900541FA8 /* StravaAuthenticationBusinessController.swift */; };
 		B2D4EFEE23315D5E00541FA8 /* Result+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D4EFED23315D5E00541FA8 /* Result+Extensions.swift */; };
 		B2D4EFF0233160C500541FA8 /* CombineFeedback in Frameworks */ = {isa = PBXBuildFile; productRef = B2D4EFEF233160C500541FA8 /* CombineFeedback */; };
+		B2D4EFF32331745B00541FA8 /* URLComponents+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D4EFF22331745B00541FA8 /* URLComponents+Extensions.swift */; };
+		B2D4EFF62331769500541FA8 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D4EFF52331769500541FA8 /* MainView.swift */; };
+		B2D4EFF8233177DB00541FA8 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D4EFF7233177DB00541FA8 /* MainViewModel.swift */; };
+		B2D4EFFA233178FB00541FA8 /* AppRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D4EFF9233178FB00541FA8 /* AppRouting.swift */; };
+		B2D4EFFC2331798800541FA8 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D4EFFB2331798800541FA8 /* UIViewController+Extensions.swift */; };
 		B2E1F30D231ED9ED00AADB2D /* Parsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E1F30C231ED9ED00AADB2D /* Parsing.swift */; };
 		B2E1F31A231EE16600AADB2D /* Functional.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2E1F313231EE16600AADB2D /* Functional.framework */; };
 		B2E1F31B231EE16600AADB2D /* Functional.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B2E1F313231EE16600AADB2D /* Functional.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -105,6 +110,11 @@
 		B2D4EFE823315ADF00541FA8 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B2D4EFEB23315B3900541FA8 /* StravaAuthenticationBusinessController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StravaAuthenticationBusinessController.swift; sourceTree = "<group>"; };
 		B2D4EFED23315D5E00541FA8 /* Result+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Result+Extensions.swift"; sourceTree = "<group>"; };
+		B2D4EFF22331745B00541FA8 /* URLComponents+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLComponents+Extensions.swift"; sourceTree = "<group>"; };
+		B2D4EFF52331769500541FA8 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		B2D4EFF7233177DB00541FA8 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		B2D4EFF9233178FB00541FA8 /* AppRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouting.swift; sourceTree = "<group>"; };
+		B2D4EFFB2331798800541FA8 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		B2E1F30C231ED9ED00AADB2D /* Parsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parsing.swift; sourceTree = "<group>"; };
 		B2E1F313231EE16600AADB2D /* Functional.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Functional.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2E1F316231EE16600AADB2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -193,6 +203,8 @@
 			children = (
 				B20890F3231175BF007D0ABB /* AppDelegate.swift */,
 				B20890F5231175BF007D0ABB /* SceneDelegate.swift */,
+				B2D4EFF9233178FB00541FA8 /* AppRouting.swift */,
+				B2D4EFF42331766600541FA8 /* Screens */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -231,7 +243,7 @@
 				B2E1F30C231ED9ED00AADB2D /* Parsing.swift */,
 				B2E1F328231EEDAD00AADB2D /* Fetch.swift */,
 				B2D4EFE4233159C500541FA8 /* Resource.swift */,
-				B2D4EFED23315D5E00541FA8 /* Result+Extensions.swift */,
+				B2D4EFF12331744700541FA8 /* Extensions */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -275,6 +287,25 @@
 				B2D4EFE823315ADF00541FA8 /* User.swift */,
 			);
 			path = Session;
+			sourceTree = "<group>";
+		};
+		B2D4EFF12331744700541FA8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B2D4EFED23315D5E00541FA8 /* Result+Extensions.swift */,
+				B2D4EFF22331745B00541FA8 /* URLComponents+Extensions.swift */,
+				B2D4EFFB2331798800541FA8 /* UIViewController+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B2D4EFF42331766600541FA8 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				B2D4EFF52331769500541FA8 /* MainView.swift */,
+				B2D4EFF7233177DB00541FA8 /* MainViewModel.swift */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 		B2E1F314231EE16600AADB2D /* Functional */ = {
@@ -505,7 +536,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B20890F4231175BF007D0ABB /* AppDelegate.swift in Sources */,
+				B2D4EFF62331769500541FA8 /* MainView.swift in Sources */,
+				B2D4EFFA233178FB00541FA8 /* AppRouting.swift in Sources */,
 				B20890F6231175BF007D0ABB /* SceneDelegate.swift in Sources */,
+				B2D4EFF8233177DB00541FA8 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,6 +550,8 @@
 				B2D4EFEE23315D5E00541FA8 /* Result+Extensions.swift in Sources */,
 				B2E1F329231EEDAD00AADB2D /* Fetch.swift in Sources */,
 				B2E1F32D231EF21D00AADB2D /* CoreError.swift in Sources */,
+				B2D4EFF32331745B00541FA8 /* URLComponents+Extensions.swift in Sources */,
+				B2D4EFFC2331798800541FA8 /* UIViewController+Extensions.swift in Sources */,
 				B2E1F30D231ED9ED00AADB2D /* Parsing.swift in Sources */,
 				B2D4EFE5233159C500541FA8 /* Resource.swift in Sources */,
 				B208912723133C88007D0ABB /* Connectable.swift in Sources */,
