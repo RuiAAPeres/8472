@@ -5,12 +5,12 @@ import StravaCore
 
 class MainViewModel: ObservableObject {
     
-    @Published var state: State
-    let route: PassthroughSubject<Route, Never>
+    @Published var state: State = .loading
+    let route: PassthroughSubject<Route, Never> = PassthroughSubject()
     
     private var disposables = Set<AnyCancellable>()
     
-    init(session: SessionViewModel) {        
+    init(session: SessionViewModel) {
         session
             .state.map(toMainViewState)
             .assign(to: \.state, on: self)

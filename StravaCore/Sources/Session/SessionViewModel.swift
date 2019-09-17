@@ -21,9 +21,9 @@ public final class SessionViewModel: SessionViewModelProtocol {
     
     public init(
         authentication: StravaAuthenticationBusinessControllerProtocol,
-        storage: UserStorage,
+        storage: UserStorageProtocol,
         stravaURLCode: PassthroughSubject<StravaCode?, Never>
-        ) {
+    ) {
         
         state = Publishers.system(initial: .checkCredentials,
                                   feedbacks: [
@@ -31,16 +31,17 @@ public final class SessionViewModel: SessionViewModelProtocol {
                                     SessionViewModel.loop_authenticateStep0(storage: storage, stravaURLCode: stravaURLCode),
                                     SessionViewModel.loop_authenticateStep1(authentication: authentication),
                                     SessionViewModel.loop_authenticateStep2(authentication: authentication, storage: storage)
-                                  ],
+            ],
                                   scheduler: queue,
                                   reduce: SessionViewModel.reducer)
     }
 }
 
 extension SessionViewModel {
-    static func loop_checkCredentials(authentication: StravaAuthenticationBusinessControllerProtocol,
-                                      storage: UserStorage
-        ) -> Feedback<State, Event> {
+    static func loop_checkCredentials(
+        authentication: StravaAuthenticationBusinessControllerProtocol,
+        storage: UserStorageProtocol
+    ) -> Feedback<State, Event> {
         
         return Feedback(effects: { state -> AnyPublisher<Event, Never> in
             
@@ -67,8 +68,9 @@ extension SessionViewModel {
         })
     }
     
-    static func loop_authenticateStep0(storage: UserStorage,
-                                       stravaURLCode: PassthroughSubject<StravaCode?, Never>)
+    static func loop_authenticateStep0(
+        storage: UserStorageProtocol,
+        stravaURLCode: PassthroughSubject<StravaCode?, Never>)
         -> Feedback<State, Event> {
             
             return Feedback(effects: { state -> AnyPublisher<Event, Never> in
@@ -91,8 +93,9 @@ extension SessionViewModel {
             })
     }
     
-    static func loop_authenticateStep1(authentication: StravaAuthenticationBusinessControllerProtocol
-        ) -> Feedback<State, Event> {
+    static func loop_authenticateStep1(
+        authentication: StravaAuthenticationBusinessControllerProtocol
+    ) -> Feedback<State, Event> {
         return Feedback(effects: { state -> AnyPublisher<Event, Never> in
             
             guard case let .authenticatingStep1(stravaCode) = state else {
@@ -107,9 +110,10 @@ extension SessionViewModel {
         })
     }
     
-    static func loop_authenticateStep2(authentication: StravaAuthenticationBusinessControllerProtocol,
-                                       storage: UserStorage
-        ) -> Feedback<State, Event> {
+    static func loop_authenticateStep2(
+        authentication: StravaAuthenticationBusinessControllerProtocol,
+        storage: UserStorageProtocol
+    ) -> Feedback<State, Event> {
         return Feedback(effects: { state -> AnyPublisher<Event, Never> in
             
             guard case let .authenticatingStep2(response) = state else {
@@ -176,21 +180,5 @@ extension SessionViewModel {
             print(event)
             fatalError()
         }
-    }
-}
-
-public struct UserStorage {
-    
-    private let path: String
-    
-    public init(path: String) {
-        self.path = path
-    }
-    
-    public func save(user: User) -> AnyPublisher<User, CoreError> {
-        return Empty().eraseToAnyPublisher()
-    }
-    public func load() -> AnyPublisher<User, CoreError> {
-        return Empty().eraseToAnyPublisher()
     }
 }
