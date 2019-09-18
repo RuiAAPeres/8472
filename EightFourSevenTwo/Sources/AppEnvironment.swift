@@ -13,6 +13,8 @@ struct AppEnvironment {
     }
 }
 
+private let _stravaURLCode: PassthroughSubject<StravaCode?, Never> = PassthroughSubject()
+
 public struct Environment {
     
     let user: User?
@@ -22,7 +24,7 @@ public struct Environment {
     
     init(_ user: User? = nil,
          connectable: Connectable = makeConfiguration() |> URLSession.init(configuration:),
-         stravaURLCode: PassthroughSubject<StravaCode?, Never> = PassthroughSubject(),
+         stravaURLCode: PassthroughSubject<StravaCode?, Never> = _stravaURLCode,
          userStorage: UserStorageProtocol = UserStorage()) {
         self.user = user
         self.connectable = connectable
