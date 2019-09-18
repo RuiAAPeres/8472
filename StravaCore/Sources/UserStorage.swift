@@ -11,9 +11,9 @@ public struct UserStorage: UserStorageProtocol {
     public init() {}
     
     public func save(user: User) -> AnyPublisher<User, CoreError> {
-        return Empty().eraseToAnyPublisher()
+        return Fail(error: CoreError.failedStoringUser).eraseToAnyPublisher()
     }
     public func load() -> AnyPublisher<User, CoreError> {
-        return Empty().eraseToAnyPublisher()
+        return Fail(error: CoreError.userNotFound).eraseToAnyPublisher()
     }
 }
