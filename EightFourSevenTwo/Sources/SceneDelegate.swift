@@ -9,7 +9,6 @@ import StravaCore
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    private let stravaURLCode: PassthroughSubject<StravaCode?, Never> = PassthroughSubject()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
  
@@ -32,6 +31,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 ?|> \URLComponents.queryItems
                 ?|> curry(extract)("code")
         
-        stravaURLCode.send(someCode)
+        AppEnvironment.current.stravaURLCode.send(someCode)
     }
 }
