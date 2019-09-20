@@ -17,6 +17,8 @@
 		B208911D23133B67007D0ABB /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B208911523133B67007D0ABB /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B208912723133C88007D0ABB /* Connectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B208912423133C88007D0ABB /* Connectable.swift */; };
 		B2966889233195F4001CF7AF /* UserStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2966888233195F4001CF7AF /* UserStorage.swift */; };
+		B2B92A9223342BD9003F8D18 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B92A9123342BD9003F8D18 /* WebView.swift */; };
+		B2B92A9423343003003F8D18 /* SwiftUI+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B92A9323343003003F8D18 /* SwiftUI+Extensions.swift */; };
 		B2D4EFCC2331565100541FA8 /* StravaCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2D4EFC52331565100541FA8 /* StravaCore.framework */; };
 		B2D4EFCD2331565100541FA8 /* StravaCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B2D4EFC52331565100541FA8 /* StravaCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B2D4EFD62331573F00541FA8 /* StravaConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D4EFD52331573F00541FA8 /* StravaConfiguration.swift */; };
@@ -100,6 +102,8 @@
 		B208911823133B67007D0ABB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B208912423133C88007D0ABB /* Connectable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connectable.swift; sourceTree = "<group>"; };
 		B2966888233195F4001CF7AF /* UserStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStorage.swift; sourceTree = "<group>"; };
+		B2B92A9123342BD9003F8D18 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		B2B92A9323343003003F8D18 /* SwiftUI+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftUI+Extensions.swift"; sourceTree = "<group>"; };
 		B2D4EFC52331565100541FA8 /* StravaCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StravaCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2D4EFC82331565100541FA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2D4EFD52331573F00541FA8 /* StravaConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StravaConfiguration.swift; sourceTree = "<group>"; };
@@ -209,6 +213,7 @@
 				B20890F5231175BF007D0ABB /* SceneDelegate.swift */,
 				B2D4EFF9233178FB00541FA8 /* AppRouting.swift */,
 				B2D4EFFD23317B5B00541FA8 /* AppEnvironment.swift */,
+				B2B92A9023342BA0003F8D18 /* Common UI  */,
 				B2D4EFF42331766600541FA8 /* Screens */,
 			);
 			path = Sources;
@@ -251,6 +256,14 @@
 				B2D4EFF12331744700541FA8 /* Extensions */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		B2B92A9023342BA0003F8D18 /* Common UI  */ = {
+			isa = PBXGroup;
+			children = (
+				B2B92A9123342BD9003F8D18 /* WebView.swift */,
+			);
+			path = "Common UI ";
 			sourceTree = "<group>";
 		};
 		B2D4EFC62331565100541FA8 /* StravaCore */ = {
@@ -301,6 +314,7 @@
 				B2D4EFED23315D5E00541FA8 /* Result+Extensions.swift */,
 				B2D4EFF22331745B00541FA8 /* URLComponents+Extensions.swift */,
 				B2D4EFFB2331798800541FA8 /* UIViewController+Extensions.swift */,
+				B2B92A9323343003003F8D18 /* SwiftUI+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -547,6 +561,7 @@
 				B20890F6231175BF007D0ABB /* SceneDelegate.swift in Sources */,
 				B2D4EFF8233177DB00541FA8 /* MainViewModel.swift in Sources */,
 				B2D4EFFE23317B5B00541FA8 /* AppEnvironment.swift in Sources */,
+				B2B92A9223342BD9003F8D18 /* WebView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -555,6 +570,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2D4EFEE23315D5E00541FA8 /* Result+Extensions.swift in Sources */,
+				B2B92A9423343003003F8D18 /* SwiftUI+Extensions.swift in Sources */,
 				B2E1F329231EEDAD00AADB2D /* Fetch.swift in Sources */,
 				B2E1F32D231EF21D00AADB2D /* CoreError.swift in Sources */,
 				B2D4EFF32331745B00541FA8 /* URLComponents+Extensions.swift in Sources */,
