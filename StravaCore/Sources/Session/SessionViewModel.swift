@@ -16,8 +16,8 @@ protocol SessionViewModelProtocol {
 public final class SessionViewModel: SessionViewModelProtocol {
     
     public let state: AnyPublisher<SessionViewModel.State, Never>
-    
-    private let queue = DispatchQueue(label: "queue.session", qos: .userInitiated)
+    private let queue = DispatchQueue(label: "queue.session")
+    private let startingTrigger: PassthroughSubject<Void, Never> = PassthroughSubject()
     
     public init(
         authentication: StravaAuthenticationBusinessControllerProtocol,
@@ -27,23 +27,36 @@ public final class SessionViewModel: SessionViewModelProtocol {
         
         state = Publishers.system(initial: .checkCredentials,
                                   feedbacks: [
-                                    SessionViewModel.loop_checkCredentials(authentication: authentication, storage: storage),
-                                    SessionViewModel.loop_authenticateStep0(storage: storage, stravaURLCode: stravaURLCode),
+                                    SessionViewModel.loop_checkCredentials(
+                                        authentication: authentication,
+                                        storage: storage,
+                                        startingTrigger: startingTrigger),
+                                    SessionViewModel.loop_authenticateStep0(
+                                        storage: storage,
+                                        stravaURLCode: stravaURLCode),
                                     SessionViewModel.loop_authenticateStep1(authentication: authentication),
-                                    SessionViewModel.loop_authenticateStep2(authentication: authentication, storage: storage)
+                                    SessionViewModel.loop_authenticateStep2(
+                                        authentication: authentication, storage: storage)
             ],
                                   scheduler: queue,
                                   reduce: SessionViewModel.reducer)
+    }
+    
+    public func start() {
+        startingTrigger.send()
     }
 }
 
 extension SessionViewModel {
     static func loop_checkCredentials(
         authentication: StravaAuthenticationBusinessControllerProtocol,
-        storage: UserStorageProtocol
+        storage: UserStorageProtocol,
+        startingTrigger: PassthroughSubject<Void, Never>
     ) -> Feedback<State, Event> {
         
         return Feedback(effects: { state -> AnyPublisher<Event, Never> in
+            
+            startingTrigger.flatMap(maxPublishers: .max(1)) { Void -> AnyPublisher<Event, Never>  in
             
             guard case .checkCredentials = state else {
                 return Empty().eraseToAnyPublisher()
@@ -65,6 +78,7 @@ extension SessionViewModel {
                 .map(Event.authenticated)
                 .replaceError(with: Event.noAuthentication)
                 .eraseToAnyPublisher()
+            }.eraseToAnyPublisher()
         })
     }
     

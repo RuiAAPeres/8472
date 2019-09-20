@@ -9,12 +9,20 @@ class MainViewModel: ObservableObject {
     let route: PassthroughSubject<Route, Never> = PassthroughSubject()
     
     private var disposables = Set<AnyCancellable>()
+    private let session: SessionViewModel
     
     init(session: SessionViewModel) {
-        session
-            .state.map(toMainViewState)
+        self.session = session
+        
+        session.state
+            .map(toMainViewState)
+            .receive(on: DispatchQueue.main)
             .assign(to: \.state, on: self)
             .store(in: &disposables)
+    }
+    
+    func start() {
+        session.start()
     }
 }
 
