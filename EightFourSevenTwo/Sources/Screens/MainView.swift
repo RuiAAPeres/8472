@@ -14,7 +14,9 @@ struct MainView: View {
         NavigationView {
             render(viewModel.state)
         }
-        .onAppear(perform: viewModel.start)
+        .onAppear(perform: {
+            DispatchQueue.main.async(execute: self.viewModel.start)
+        })
     }
     
     func render(_ state: MainViewModel.State) -> some View {
